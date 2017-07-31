@@ -4,7 +4,7 @@ import random
 app = Flask(__name__)
 
 # list of cat images
-images = [
+images_ext = [
     "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr05/15/9/anigif_enhanced-buzz-26388-1381844103-11.gif",
     "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr01/15/9/anigif_enhanced-buzz-31540-1381844535-8.gif",
     "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr05/15/9/anigif_enhanced-buzz-26390-1381844163-18.gif",
@@ -20,7 +20,7 @@ images = [
 
 @app.route('/')
 def index():
-    url = random.choice(images)
+    url = random.choice(images_ext)
     return render_template('index.html', url=url)
 
 if __name__ == "__main__":
